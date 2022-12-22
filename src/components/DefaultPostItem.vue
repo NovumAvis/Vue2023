@@ -1,29 +1,20 @@
 <template>
- 
- <div class="posts_container">
-		<h2>List of Posts</h2>
-		<default-post-item :key="post.id" v-for="post in posts" :post="post"></default-post-item>
+	<div class="post">
+		<h2 class="the_title">{{ post.title }}</h2>
+		<p class="the_desc">{{ post.description }}</p>
 	</div>
-
 </template>
 
 <script>
-import DefaultPostItem from '@/components/DefaultPostItem.vue'
-
 export default {
-	components: {
-		DefaultPostItem,
-	},
-  name: 'DefaultPosts',
+  name: 'DefaultPostItem',
 	props: {
-		posts: Array,
+		post: Object,
 		required: true,
 	},
 	data(){
 		return{	
 		}
-	},
-	methods: {
 	},
 	
 }
