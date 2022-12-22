@@ -2,7 +2,10 @@
  
  <div class="posts_container">
 		<h2>List of Posts</h2>
-		<default-post-item :key="post.id" v-for="post in posts" :post="post"></default-post-item>
+		<div class="posts_wrap">
+			<default-post-item class="post_wrap" :key="post.id" v-for="post in posts" :post="post"></default-post-item>
+		</div>
+		
 	</div>
 
 </template>
@@ -32,27 +35,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-.post_creater{
-	margin: 0 auto;
-	flex-direction: column;
+.posts_container .posts_wrap{
 	display: flex;
-	width: 100%;
-	max-width: 320px;
-	input{
-		background-color: #f5f5f5;
-		border: none;
-		color: #333;
-		padding: 10px 15px;
-		&::placeholder{
-			color: #aaaaaa;
-		}
-	}
-	.submit{
-		padding: 10px 15px;
-		border: none;
-		width: max-content;
-		background-color: #333;
-		color: #fff;
+	flex-direction: column;
+	.post_wrap{
+		margin-bottom: 10px;
+		border: 2px solid #dadada;
 	}
 }
 

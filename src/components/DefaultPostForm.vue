@@ -11,13 +11,15 @@
 			:value="post.desc"
 			@input="post.desc = $event.target.value"
 		>
-		<button class="submit" @click="createPost">Создать</button>
+		<def-button class="submit" @click="createPost">Создать</def-button>
 	</form>
 
 </template>
 
 <script>
+import DefButton from '@/components/UI/DefButton.vue'
 export default {
+	components: { DefButton, },
   name: 'DefaultPostForm',
 	data(){
 		return{

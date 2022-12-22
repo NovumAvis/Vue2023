@@ -1,12 +1,23 @@
 <template>
 	<div class="post">
-		<h2 class="the_title">{{ post.title }}</h2>
-		<p class="the_desc">{{ post.description }}</p>
+		<div class="info_wrap">
+			<h2 class="the_title">{{ post.title }}</h2>
+			<p class="the_desc">{{ post.description }}</p>
+		</div>
+		<div class="buttons">
+			<def-button class="delete_button">Удалить</def-button>
+		</div>
 	</div>
 </template>
 
 <script>
+
+// import DefButton from '@/components/UI/DefButton.vue'
+
 export default {
+	// components: {
+	// 	DefButton,
+	// },
   name: 'DefaultPostItem',
 	props: {
 		post: Object,
@@ -23,27 +34,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-.post_creater{
-	margin: 0 auto;
-	flex-direction: column;
+.post{
+	padding: 10px 25px;
 	display: flex;
-	width: 100%;
-	max-width: 320px;
-	input{
-		background-color: #f5f5f5;
-		border: none;
-		color: #333;
-		padding: 10px 15px;
-		&::placeholder{
-			color: #aaaaaa;
-		}
+	justify-content: space-between;
+	align-items: center;
+	.info_wrap{
+		text-align: left;
 	}
-	.submit{
-		padding: 10px 15px;
-		border: none;
-		width: max-content;
-		background-color: #333;
-		color: #fff;
+	.buttons{
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
 
