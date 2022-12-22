@@ -1,12 +1,14 @@
 <template>
 	<default-post-form @create="createNewPost"></default-post-form>
 	<default-post-list :posts="posts"></default-post-list>
+	<button @click="fetchPosts">Получить посты</button>
 </template>
 
 <script>
 
 import DefaultPostForm from '@/components/DefaultPostForm.vue'
 import DefaultPostList from '@/components/DefaultPostList.vue'
+import axios from 'axios'
 
 export default {
 	components: {
@@ -16,10 +18,7 @@ export default {
 
 	data(){
 		return{
-			posts: [
-				{id: 1, title: 'Пост №1', description: 'Описание поста №1'},
-				{id: 2, title: 'Пост №2', description: 'Описание поста №2'},
-			],	
+			posts: [],	
 		}
 	},
 	methods: {
@@ -30,8 +29,19 @@ export default {
 				description: newPost.desc,
 			}
 			this.posts.push(thePost);
-		}
+		},
+		async fetchPosts(){
+			try{
+				const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
+				this.posts = response.data;
+			}catch(e){
+			alert('Ошибка');
+			}
+		} 
 	},
+	mounted(){
+		this.fetchPosts();
+	}
 	
 }
 </script>
