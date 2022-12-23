@@ -1,8 +1,9 @@
-import DefButton from '@/components/UI/DefButton.vue'
-import MyInput from '@/components/UI/MyInput.vue'
-import MySelect from '@/components/UI/MySelect.vue'
-import Navbar from '@/components/UI/Navbar.vue'
+import MyButton from "@/components/UI/MyButton";
+import MyInput from "@/components/UI/MyInput";
+import MyDialog from "@/components/UI/MyDialog";
 
 export default [
-	DefButton, MyInput, MySelect, Navbar
-]
+    MyButton,
+    MyInput,
+    MyDialog
+];

@@ -1,40 +1,43 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/pages/Home.vue'
-import DefaultPosts from '@/components/DefaultPosts.vue'
-import PostPage from '@/pages/PostPage.vue'
-import AboutView from '@/pages/About.vue'
+import Main from "@/pages/Main";
+import {createRouter, createWebHistory} from "vue-router";
+import UserPage from "@/pages/UserPage";
+import About from "@/pages/About";
+import PostIdPage from "@/pages/PostIdPage";
+import PostPageWithStore from "@/pages/PostPageWithStore";
+import PostPageCompositionApi from "@/pages/PostPageCompositionApi";
+
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-	{
-    path: '/posts',
-    name: 'Posts',
-    component: DefaultPosts
-  },
-	{
-    path: '/posts/:id',
-    name: 'Post',
-    component: PostPage
-  },
-  {
-    path: '/about',
-    name: 'about',
-		component: AboutView
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import(/* webpackChunkName: "about" */ '../pages/About.vue')
-  }
-	
+    {
+        path: '/',
+        component: Main
+    },
+    {
+        path: '/posts',
+        component: UserPage
+    },
+    {
+        path: '/about',
+        component: About
+    },
+    {
+        path: '/posts/:id',
+        component: PostIdPage
+    },
+    {
+        path: '/store',
+        component: PostPageWithStore
+    },
+    {
+        path: '/composition',
+        component: PostPageCompositionApi
+    },
+
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+    routes,
+    history: createWebHistory(process.env.BASE_URL)
 })
 
 export default router;
