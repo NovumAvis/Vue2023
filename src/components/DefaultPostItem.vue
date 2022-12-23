@@ -5,7 +5,13 @@
 			<p class="the_desc">{{ post.description }}</p>
 		</div>
 		<div class="buttons">
-			<def-button class="delete_button">Удалить</def-button>
+			<def-button class="open_button"
+				@click="$router.push(`/posts/${post.id}`)"
+			>Открыть</def-button>
+			<def-button class="delete_button"
+				@click="$emit('deletePost', post)"
+			>Удалить</def-button>
+			
 		</div>
 	</div>
 </template>
@@ -46,6 +52,9 @@ export default {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		.open_button{
+			margin-right: 5px;
+		}
 	}
 }
 

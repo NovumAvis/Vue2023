@@ -3,7 +3,14 @@
  <div class="posts_container">
 		<h2>List of Posts</h2>
 		<div class="posts_wrap">
-			<default-post-item class="post_wrap" :key="post.id" v-for="post in posts" :post="post"></default-post-item>
+			<default-post-item 
+				class="post_wrap" 
+				:key="post.id" 
+				v-for="post in posts" 
+				:post="post"
+				@deletePost="$emit('deletePost', post)"
+				>
+			</default-post-item>
 		</div>
 		
 	</div>
