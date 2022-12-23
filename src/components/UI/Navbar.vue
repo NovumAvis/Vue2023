@@ -2,7 +2,7 @@
 	<div id="nav">
 		<def-button class="nav_button" @click="$router.push('/')" >Главная</def-button>
 		<def-button class="nav_button" @click="$router.push('/posts')" >Посты</def-button>
-
+		<def-button class="nav_button" @click="$router.push('/about')" >О нас</def-button>
 		<!-- <router-link class="nav_button" to="/about/">О нас</router-link> -->
 		<!-- <def-button @click="$router.push('/postsstore')">Посты из хранилища</def-button> -->
 		<!-- <router-link to="/">Home</router-link> |
