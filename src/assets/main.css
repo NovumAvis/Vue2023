@@ -1,0 +1,516 @@
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"), url("fonts/manrope/Manrope-Regular.woff2") format("woff2"), url("fonts/manrope/Manrope-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"), url("fonts/manrope/Manrope-Bold.woff2") format("woff2"), url("fonts/manrope/Manrope-Bold.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 800;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"), url("fonts/manrope/Manrope-ExtraBold.woff2") format("woff2"), url("fonts/manrope/Manrope-ExtraBold.woff") format("woff");
+}
+
+
+/* Template styles */
+*::placeholder{
+	user-select: none;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 150%;
+}
+
+button, span.theButton{
+	user-select: none;
+	pointer-events: fill;
+	cursor: pointer;
+}
+span{
+	pointer-events: fill;
+}
+
+
+body{
+	background: #FFEAEB;
+	color: #23292D;
+	padding: 0;
+	margin: 0;
+	font-family: Manrope, Arial, sans-serif;
+	font-weight: 400;
+}
+
+.theTitle, .pageTitle, .pageSubtitle{
+	cursor: default;
+	user-select: none;
+}
+
+body .marginAuto{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fontFamilyB{
+	font-weight: 600;
+}
+.fontFamilyEB{
+	font-weight: 800;
+}
+
+
+.mainContainer{
+	width: 100%;
+}
+
+.contentWrap{
+	max-width: 600px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.topWrap{
+	border-radius: 0 0 12px 12px;
+}
+.midWrap{
+	border-radius: 12px;
+}
+.bottomWrap{
+	border-radius: 12px 12px 0 0;
+}
+
+
+
+.padding10{
+	padding: 10px;
+}
+
+.marginB12{
+	margin-bottom: 12px;
+}
+.marginB20{
+	margin-bottom: 20px;
+}
+.marginB30{
+	margin-bottom: 30px;
+}
+
+
+
+.theButton{
+	border: none;
+	display: block;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	color: initial;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all .14s ease;
+	border-radius: 8px;
+	padding: 12px 16px;
+	font-weight: 800;
+	user-select: none;
+	pointer-events: fill;
+	text-align: center;
+}
+.theButton:hover{}
+
+
+.buttonTransparent{
+	color: #FD7C84;
+}
+.buttonTransparent:hover{
+	opacity: .8;
+}
+.buttonTransparent.disabled{
+	opacity: .4;
+	cursor: default;
+}
+
+
+.buttonPrimary{
+	background-color: #FD7C84;
+	color: #FFF;
+}
+.buttonPrimary:hover{
+	background-color: #DF6068;
+}
+.buttonPrimary.disabled{
+	opacity: 0.4;
+	cursor: default;
+}
+
+
+
+.buttonSecondary{
+	background-color: #FFEAEB;
+	color: #FD7C84;
+	
+}
+.buttonSecondary:hover{
+	background-color: #FEDADD;
+}
+.buttonSecondary.disabled{
+	opacity: 0.4;
+	cursor: default;
+}
+
+
+
+.buttonTertiary{
+	color: #FD7C84;
+	background-color: #F3F5F6;
+}
+.buttonTertiary:hover{
+	background-color: #E9EDEF;
+}
+.buttonTertiary.disabled{
+	opacity: 0.4;
+	cursor: default;
+}
+
+
+
+.buttonWhite{
+	color: #FD7C84;
+	background-color: #FFF;
+}
+.buttonWhite:hover{
+	background-color: #23292D0A;
+}
+.buttonWhite.disabled{
+	opacity: .4;
+	cursor: default;
+}
+
+
+
+.buttonConfirm, .buttonOptimal{
+	min-width: 288px;
+	max-width: 395px;
+	width: max-content;
+}
+
+
+
+/* -------- Стили блоков --------- */
+
+a{
+	color: #FD7C84;
+	text-decoration: none;
+	transition: opacity .14s ease;
+}
+a:hover{
+	opacity: .8;
+}
+
+.alignCenter{
+	text-align: center;
+}
+.alignLeft{
+	text-align: left;
+}
+
+.colorAccent{
+	color: #FD7C84;
+}
+
+.fontSize12{
+	font-size: 12px;
+}
+.fontSize14{
+	font-size: 14px;
+}
+.fontSize20{
+	font-size: 20px;
+}
+.fontSize32{
+	font-size: 32px;
+}
+
+.infoWrap h1{
+	font-size: 32px;
+	margin-bottom: 24px;
+	font-weight: 800;
+}
+.infoWrap h2{
+	font-size: 20px;
+	margin-bottom: 20px;
+	font-weight: 800;
+}
+.infoWrap h3, .infoWrap h4, .infoWrap h5, .infoWrap h6{
+	font-size: 16px;
+	margin-bottom: 8px;
+}
+.infoWrap p, .infoWrap li, .infoWrap ul, .infoWrap ol, .infoWrap h1, .infoWrap h2, .infoWrap h3, .infoWrap h4, .infoWrap h5, .infoWrap h6, .infoWrap a{
+ /* text-align: left; */
+}
+
+.infoWrap p{
+	margin-bottom: 8px;
+ }
+
+
+
+
+ /* --------- Формы --------- */
+
+
+
+.formWrap{
+	max-width: 568px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.formWrap .inputWrap{
+	padding-bottom: 26px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: relative;
+}
+.formWrap .inputWrap .label{
+	font-size: 12px;
+	margin-bottom: 4px;
+	margin-left: 16px;
+}
+.formWrap .inputWrap .inputBox{
+	position: relative;
+	width: 100%;
+}
+.formWrap .inputWrap .inputBox::before{
+	content: '';
+	position: absolute;
+	bottom: 6px;
+	right: 8px;
+	display: block;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	background-image: url('../assets/icons/alert.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60%;
+	opacity: 0;
+	transition: all .24s ease;
+	z-index: 10;
+}
+.formWrap .inputWrap .errorTitle{
+	font-size: 12px;
+	margin-left: 16px;
+	margin-top: 4px;
+	color: #F74A4A;
+	position: absolute;
+	bottom: 5px;
+}
+
+.formWrap .inputWrap input{
+	position: relative;
+	z-index: 5;
+	width: 100%;
+	border: none;
+	padding: 12px 16px;
+	box-shadow: 0px 16px 20px -8px rgba(253, 124, 132, 0.2);
+	border-radius: 8px;
+	border: 2px solid #FFF;
+	transition: all .24s ease, letter-spacing .0s ease;
+	outline: none;
+	letter-spacing: .4px;
+	box-shadow: 0px 16px 20px -8px rgba(253, 124, 132, 0.2);
+}
+.formWrap .inputWrap.notValid input{
+	border: 2px solid #F74A4A;
+}
+.formWrap .inputWrap.notValid .inputBox::before{
+	opacity: 1;
+}
+.formWrap .inputWrap.notValid .theButton.buttonShowPass{
+	right: 40px;
+}
+
+
+.formWrap .inputWrap input[type=text]{
+	letter-spacing: 0.6px;
+}
+.formWrap .inputWrap input[type=password]{
+	letter-spacing: 5px;
+}
+.formWrap .inputWrap input::placeholder{
+	color: #23292D4D;
+}
+.formWrap .inputWrap input:focus, .formWrap .inputWrap input:focus-within, .formWrap .inputWrap input:active, .formWrap .inputWrap input:focus-visible, .formWrap .inputWrap input:target{
+	border: 2px solid #FEABB0;
+	transition: all .24s ease, letter-spacing .0s ease;
+}
+
+.formWrap .inputWrap .theButton.buttonShowPass{
+	position: absolute;
+	bottom: 6px;
+	right: 8px;
+	display: block;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	z-index: 10;
+}
+.formWrap .inputWrap .theButton.buttonShowPass::before{
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-image: url('../assets/icons/eye-on.svg');
+	background-size: 66%;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0;
+	transition: all .24s ease right .0s ease;
+}
+.formWrap .inputWrap .theButton.buttonShowPass::after{
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-image: url('../assets/icons/eye-off.svg');
+	background-size: 66%;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 1;
+	transition: all .24s ease right .0s ease;
+}
+.formWrap .inputWrap .theButton.buttonShowPass.active::before{
+	opacity: 1;
+}
+.formWrap .inputWrap .theButton.buttonShowPass.active::after{
+	opacity: 0;
+}
+
+
+
+
+
+
+
+/* ------- Анимации -------- */
+
+ /* 
+.animate_click{
+	transform: scale(1.001);
+	transition: transform .27s cubic-bezier(0.15, 0.86, 0.45, 0.95);
+}
+.animate_click.clicked{
+	transform: scale(.96) !important;
+}
+.animate_click:hover{
+	transform: scale(1.001);
+}
+.animate_click.clicked{
+	transform: scale(.96) !important;
+}
+.animate_click.clicked:hover{
+	transform: scale(.96) !important;
+}
+
+
+.wave_click{
+	overflow: hidden;
+	position: relative;
+}
+
+.wave{
+  background: rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: wave .32s linear;
+  pointer-events: none;
+  position: absolute;
+}
+@keyframes wave {
+	100%{
+  	transform: scale(2);
+  	opacity: 0;
+	}
+}
+  
+	
+.scale_hover{
+	transform: scale(1.001);
+	transition: transform .26s ease;
+}
+.scale_hover:hover{
+	transform: scale(0.985);
+}
+
+
+.the_button:hover{
+	color: #fff;
+	background-color: #000;
+}
+.the_button.clicked{
+	transform: scale(.985) !important
+}
+.the_button.clicked:hover{
+	transform: scale(1.001)
+}
+.the_button.clicked.clicked{
+	transform: scale(.856) !important
+}	
+.the_button.clicked.clicked:hover{
+	transform: scale(.985) !important
+} */
+
+
+
+
+
+/* --------- Типы блоков ---------- */
+
+.blockWrap{
+	display: block;
+}
+.flexWrap{
+	display: flex;
+}
+.gridWrap{
+	display: grid;
+}
+.ghostWrap{
+	opacity: 0;
+	visibility: hidden;
+	cursor: default;
+}
+.hiddenWrap{
+	display: none;
+}
+
